@@ -1,0 +1,217 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Bai Jamjuree", sans-serif;
+    color: $DarkGrayishBlue;
+}
+
+.container {
+    text-align: center;
+    padding: 3.5rem 1.875rem;
+    background-image: url("/images/bg-header-mobile.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 100%;
+
+    @include breakpoint-up(large) {
+        background-image: url("/images/bg-header-desktop.png");
+        padding: 3.5rem 3.875rem;
+    }
+
+    p {
+        color: $GrayishBlue;
+    }
+
+    button {
+        color: white;
+        border: none;
+        height: 3.5rem;
+        width: 19.5rem;
+        border-radius: 1.75rem;
+        margin: 0.8125rem 0;
+        padding: 0;
+
+        @include breakpoint-up(large) {
+            margin: 0.8125rem;
+        }
+    }
+
+    button:hover{
+        opacity: 0.75;
+    }
+
+    .forios {
+        background-color: $StrongCyan;
+    }
+
+    .formac {
+        background-color: $LightBlue;
+    }
+
+    header {
+        padding: 4.375rem 0 3.375rem;
+    }
+
+    article {
+        padding: 1.15rem 0;
+    }
+}
+
+article:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    .image {
+        flex: 1 1 100%;
+
+        img {
+            max-width: 80vw;
+        }
+    }
+
+    .description {
+        flex: 1 1 100%;
+    }
+
+    @include breakpoint-up(large) {
+        flex-direction: row;
+
+        .image {
+            flex: 1 1 50%;
+            img {
+                max-width: 40vw;
+            }
+        }
+        .description {
+            flex: 1 1 50%;
+            text-align: left;
+
+            h3:not(:first-child) {
+                margin-top: 3rem;
+            }
+        }
+    }
+}
+
+article {
+    img {
+        max-width: 80vw;
+        @include breakpoint-up(large) {
+            max-width: 60vw;
+        }
+    }
+}
+
+article:last-child {
+    img {
+        padding: 2rem;
+    }
+
+    @include breakpoint-up(large) {
+        .grid {
+            display: grid;
+            grid-template-columns: 32% 32% 32%;
+            grid-template-rows: auto;
+            grid-template-areas: "one two three";
+            gap: 1rem;
+
+            &__one {
+                grid-area: one;
+            }
+            &__two {
+                grid-area: two;
+            }
+            &__three {
+                grid-area: three;
+            }
+        }
+        .images {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-rows: auto;
+            grid-template-areas: "img1 img2 img3 img4 img5";
+            margin-top: 4rem;
+            &__img1 {
+                grid-area: img1;
+            }
+            &__img2 {
+                grid-area: img2;
+            }
+            &__img3 {
+                grid-area: img3;
+            }
+            &__img4 {
+                grid-area: img4;
+            }
+            &__img5 {
+                grid-area: img5;
+            }
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 3rem;
+    background-color: hsla(201, 11%, 66%, 0.15);
+    // opacity: 20%;
+
+    img {
+        width: 3.625em;
+    }
+
+    p {
+        padding: 0.5rem;
+    }
+
+    .fa {
+        padding: 1rem;
+        color: $DarkGrayishBlue;
+        font-size: 30px;
+        width: 60px;
+    }
+
+    @include breakpoint-up(large) {
+        p {
+            margin: 0;
+        }
+
+        .gridfooter {
+            display: grid;
+            grid-template-columns: 20% 15% 15% 15% 35%;
+            grid-template-areas: "footer1 footer2 footer3 footer4 footer5";
+            text-align: left;
+
+            &__one {
+                text-align: center;
+                grid-area: footer1;
+                align-self: center;
+            }
+            &__two {
+                grid-area: footer2;
+            }
+            &__three {
+                grid-area: footer3;
+            }
+            &__four {
+                grid-area: footer4;
+            }
+            &__five {
+                grid-area: footer5;
+                text-align-last: center;
+            }
+        }
+    }
+}
