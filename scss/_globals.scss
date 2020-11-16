@@ -14,6 +14,7 @@ body {
     padding: 0;
     font-family: "Bai Jamjuree", sans-serif;
     color: $DarkGrayishBlue;
+    font-size: 18px;
 }
 
 .container {
@@ -26,7 +27,11 @@ body {
 
     @include breakpoint-up(large) {
         background-image: url("/images/bg-header-desktop.png");
-        padding: 3.5rem 3.875rem;
+        padding: 3.5rem 2.875rem;
+
+        header {
+            margin: 4.375rem 0 0 0;
+        }
     }
 
     p {
@@ -91,7 +96,9 @@ article:first-child {
         .image {
             flex: 1 1 50%;
             img {
-                max-width: 40vw;
+                position: absolute;
+                left: -2rem;
+                max-width: 45vw;
             }
         }
         .description {
@@ -142,7 +149,7 @@ article:last-child {
             grid-template-columns: 20% 20% 20% 20% 20%;
             grid-template-rows: auto;
             grid-template-areas: "img1 img2 img3 img4 img5";
-            margin-top: 4rem;
+            margin-top: 3rem;
             &__img1 {
                 grid-area: img1;
             }

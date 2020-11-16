@@ -16,6 +16,7 @@ body {
   padding: 0;
   font-family: "Bai Jamjuree", sans-serif;
   color: #4c545d;
+  font-size: 18px;
 }
 
 .container {
@@ -30,7 +31,10 @@ body {
 @media (min-width: 64em) {
   .container {
     background-image: url("/images/bg-header-desktop.png");
-    padding: 3.5rem 3.875rem;
+    padding: 3.5rem 2.875rem;
+  }
+  .container header {
+    margin: 4.375rem 0 0 0;
   }
 }
 
@@ -115,7 +119,9 @@ article:first-child .description {
             flex: 1 1 50%;
   }
   article:first-child .image img {
-    max-width: 40vw;
+    position: absolute;
+    left: -2rem;
+    max-width: 45vw;
   }
   article:first-child .description {
     -webkit-box-flex: 1;
@@ -176,7 +182,7 @@ article:last-child img {
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "img1 img2 img3 img4 img5";
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
   article:last-child .images__img1 {
     -ms-grid-row: 1;
